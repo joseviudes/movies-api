@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id String @id @default(uuid()) @db.Uuid // @id: establece que es la pk, @default(uuid()) genera un uuid automaticamente al crear un user, @db.Uuid: Indica que PGSql almacenar un uuid en vez de un text
+  email String @unique
+  name String
+  password String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Movie {
+  id String @id @default(uuid()) @db.Uuid
+  title String 
+  director String
+  genre String
+  duration Int
+  yearOfRelease Int 
+  rating Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
