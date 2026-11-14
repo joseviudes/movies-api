@@ -265,24 +265,7 @@ Pruebas manuales realizadas en Postman, incluyendo casos de éxito y de error.
 | Listar mis reviews | GET `/api/reviews` | `200 OK` |
 | Eliminar review | DELETE `/api/reviews/:id` | `200 OK` |
 
-Capturas:
-
-![GET /api/movies - 200 OK](docs/screenshots/01-get-movies.png)
-![POST /api/movies - 201 Created](docs/screenshots/02-post-movie.png)
-![PUT /api/movies/:id - 200 OK](docs/screenshots/03-put-movie.png)
-![DELETE /api/movies/:id - 200 OK](docs/screenshots/04-delete-movie.png)
-![POST /api/movies - 400 Bad Request](docs/screenshots/05-post-movie-400.png)
-![GET /api/movies/:id - 404 Not Found](docs/screenshots/06-get-movie-404.png)
-![POST /api/auth/register - 201 Created](docs/screenshots/07-register.png)
-![POST /api/auth/register - 400 Bad Request](docs/screenshots/08-register-400.png)
-![POST /api/auth/login - 200 OK](docs/screenshots/09-login.png)
-![POST /api/auth/login - 401 Unauthorized](docs/screenshots/10-login-401.png)
-![POST /api/movies sin token - 401 Unauthorized](docs/screenshots/11-post-movie-401.png)
-![POST /api/movies sin rol admin - 403 Forbidden](docs/screenshots/12-post-movie-403.png)
-![GET /api/movies?genre=drama - 200 OK](docs/screenshots/13-filter-genre.png)
-![POST /api/reviews - 201 Created](docs/screenshots/14-post-review.png)
-![GET /api/reviews - 200 OK](docs/screenshots/15-get-reviews.png)
-![DELETE /api/reviews/:id - 200 OK](docs/screenshots/16-delete-review.png)
+Las capturas de cada una de estas pruebas están en la carpeta [docs/screenshots](docs/screenshots), numeradas en el mismo orden que la tabla.
 
 ## Tecnologías
 
