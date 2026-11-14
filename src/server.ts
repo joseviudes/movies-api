@@ -15,7 +15,7 @@ async function start() {
 
         // la app escucha las peticiones que llegan a ese puerto
         app.listen(PORT, () => {
-            console.log(`Servidor corriendo en el puerto ${PORT}`)
+            console.log(`Servidor corriendo en http://localhost:${PORT}/api/`)
         })
 
     } catch (error) {

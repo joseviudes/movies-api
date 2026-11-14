@@ -2,3 +2,9 @@ node_modules
 dist
 .env
 /src/generated/prisma
+
+# Carpetas de herramientas/IA (no son parte del TP)
+.agents/
+.claude/
+.windsurf/
+skills-lock.json

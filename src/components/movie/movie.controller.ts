@@ -14,11 +14,20 @@ function getValidId(req: Request): string {
     return id
 }
 
+function getQueryParam(value: unknown): string | undefined {
+    if (typeof value !== "string" || value.trim() === "") return undefined
+    return value.trim()
+}
+
 export const movieController = {
 
-    async getAll(_req: Request, res: Response) {
+    async getAll(req: Request, res: Response) {
         try {
-            const movies = await movieService.getAll()
+            const movies = await movieService.getAll({
+                genre: getQueryParam(req.query.genre),
+                director: getQueryParam(req.query.director),
+                minRating: getQueryParam(req.query.minRating)
+            })
             res.status(200).json(movies)
         } catch (error) {
             handleError(res, error)
@@ -37,7 +46,7 @@ export const movieController = {
 
     async create(req: Request, res: Response) {
         try {
-            const movie = await movieService.create(req.body)
+            const movie = await movieService.create(req.body ?? {})
             res.status(201).json(movie)
         } catch (error) {
             handleError(res, error)
@@ -47,7 +56,7 @@ export const movieController = {
     async update(req: Request, res: Response) {
         try {
             const id = getValidId(req)
-            const movie = await movieService.update(id, req.body)
+            const movie = await movieService.update(id, req.body ?? {})
             res.status(200).json(movie)
         } catch (error) {
             handleError(res, error)

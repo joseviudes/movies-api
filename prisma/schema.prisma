@@ -12,23 +12,45 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model User {
-  id String @id @default(uuid()) @db.Uuid // @id: establece que es la pk, @default(uuid()) genera un uuid automaticamente al crear un user, @db.Uuid: Indica que PGSql almacenar un uuid en vez de un text
-  email String @unique
-  name String
-  password String
+  id        String   @id @default(uuid()) @db.Uuid // @id: establece que es la pk, @default(uuid()) genera un uuid automaticamente al crear un user, @db.Uuid: Indica que PGSql almacenar un uuid en vez de un text
+  email     String   @unique
+  name      String
+  password  String
+  role      Role     @default(USER)
+  reviews   Review[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Movie {
-  id String @id @default(uuid()) @db.Uuid
-  title String 
-  director String
-  genre String
-  duration Int
-  yearOfRelease Int 
-  rating Float
+  id            String   @id @default(uuid()) @db.Uuid
+  title         String
+  director      String
+  genre         String
+  duration      Int
+  yearOfRelease Int
+  rating        Float
+  reviews       Review[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(uuid()) @db.Uuid
+  comment   String
+  score     Int
+  userId    String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movieId   String   @db.Uuid
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([userId, movieId]) // un user solo puede dejar una review por pelicula
 }

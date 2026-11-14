@@ -4,3 +4,6 @@ export interface UserInput {
     name: string
     password: string
 }
+
+export type LoginInput = Pick<UserInput, "email" | "password">
+
