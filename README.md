@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.svg" alt="Movies API" width="100%">
+  <img src="docs/movies-api-banner.svg" alt="Movies API" width="100%">
 </p>
 
 # Movies API
