@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/banner.svg" alt="Movies API" width="100%">
+</p>
+
 # Movies API
 
 API REST para un catálogo de películas, hecha con Node.js, Express, TypeScript, PostgreSQL y Prisma.

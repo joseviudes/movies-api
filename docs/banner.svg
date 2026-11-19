@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Movies API - API REST de películas">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a0b2e"/>
+      <stop offset="0.55" stop-color="#2b0f3a"/>
+      <stop offset="1" stop-color="#0b0614"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="0.5" stop-color="#f5b82e"/>
+      <stop offset="1" stop-color="#d98a0b"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff4c7" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#fff4c7" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f5b82e" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f5b82e" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="sprockets" width="40" height="44" patternUnits="userSpaceOnUse">
+      <rect width="40" height="44" fill="#0a0a0a"/>
+      <rect x="10" y="12" width="20" height="20" rx="4" fill="#2b0f3a"/>
+    </pattern>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="420" fill="url(#bg)"/>
+
+  <!-- Haces de luz de reflectores -->
+  <polygon points="300,44 180,376 420,376" fill="url(#beam)" opacity="0.5"/>
+  <polygon points="900,44 760,376 1040,376" fill="url(#beam)" opacity="0.35"/>
+
+  <!-- Estrellitas -->
+  <g fill="#fff">
+    <circle cx="520" cy="80" r="1.6" opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1100" cy="110" r="1.4" opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="1040" cy="320" r="1.8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="470" cy="330" r="1.3" opacity="0.5"/>
+    <circle cx="760" cy="90" r="1.2" opacity="0.6"/>
+    <circle cx="60" cy="200" r="1.4" opacity="0.6"/>
+    <circle cx="1150" cy="220" r="1.1" opacity="0.5"/>
+  </g>
+
+  <!-- Tiras de película arriba y abajo (se desplazan) -->
+  <rect x="0" y="0" width="1200" height="44" fill="url(#sprockets)">
+    <animate attributeName="x" from="0" to="-40" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="376" width="1240" height="44" fill="url(#sprockets)">
+    <animate attributeName="x" from="-40" to="0" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Brillo detrás de la claqueta -->
+  <circle cx="250" cy="215" r="150" fill="url(#glow)"/>
+
+  <!-- Claqueta -->
+  <g transform="translate(130 120)">
+    <!-- cuerpo -->
+    <rect x="0" y="62" width="240" height="160" rx="10" fill="#141414" stroke="#f5b82e" stroke-width="3"/>
+    <line x1="16" y1="118" x2="224" y2="118" stroke="#3a3a3a" stroke-width="2"/>
+    <line x1="16" y1="168" x2="224" y2="168" stroke="#3a3a3a" stroke-width="2"/>
+    <line x1="120" y1="118" x2="120" y2="210" stroke="#3a3a3a" stroke-width="2"/>
+    <text x="120" y="100" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#fff" letter-spacing="2">MOVIES API</text>
+    <text x="22" y="148" font-family="Consolas, Menlo, monospace" font-size="15" fill="#f5b82e">ESCENA</text>
+    <text x="22" y="198" font-family="Consolas, Menlo, monospace" font-size="15" fill="#f5b82e">TOMA</text>
+    <text x="132" y="148" font-family="Consolas, Menlo, monospace" font-size="15" fill="#f5b82e">ROL</text>
+    <text x="132" y="198" font-family="Consolas, Menlo, monospace" font-size="15" fill="#f5b82e">TOKEN</text>
+    <text x="84" y="148" font-family="Consolas, Menlo, monospace" font-size="15" fill="#fff">5.0</text>
+    <text x="84" y="198" font-family="Consolas, Menlo, monospace" font-size="15" fill="#fff">1</text>
+    <text x="168" y="148" font-family="Consolas, Menlo, monospace" font-size="15" fill="#fff">ADMIN</text>
+    <text x="190" y="198" font-family="Consolas, Menlo, monospace" font-size="15" fill="#fff">JWT</text>
+    <!-- barra inferior fija -->
+    <g>
+      <rect x="0" y="34" width="240" height="28" fill="#f4f4f4"/>
+      <polygon points="10,34 40,34 62,62 32,62" fill="#141414"/>
+      <polygon points="70,34 100,34 122,62 92,62" fill="#141414"/>
+      <polygon points="130,34 160,34 182,62 152,62" fill="#141414"/>
+      <polygon points="190,34 220,34 240,58 240,62 212,62" fill="#141414"/>
+    </g>
+    <!-- barra superior que "aplaude" -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-18 0 34; -18 0 34; 0 0 34; -18 0 34" keyTimes="0;0.7;0.78;1" dur="3s" repeatCount="indefinite"/>
+      <rect x="0" y="6" width="240" height="28" fill="#f4f4f4"/>
+      <polygon points="20,6 50,6 28,34 -2,34" fill="#141414" transform="translate(4 0)"/>
+      <polygon points="80,6 110,6 88,34 58,34" fill="#141414"/>
+      <polygon points="140,6 170,6 148,34 118,34" fill="#141414"/>
+      <polygon points="200,6 230,6 208,34 178,34" fill="#141414"/>
+    </g>
+    <circle cx="8" cy="34" r="6" fill="#f5b82e"/>
+  </g>
+
+  <!-- Título -->
+  <text x="470" y="185" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="84" font-weight="900" fill="url(#gold)" letter-spacing="1">Movies API</text>
+  <text x="474" y="225" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" fill="#e9dcff">API REST para un catálogo de películas</text>
+
+  <!-- Línea tipo terminal -->
+  <g transform="translate(474 248)">
+    <rect width="560" height="40" rx="8" fill="#0d0d12" stroke="#4a2a66"/>
+    <text x="16" y="26" font-family="Consolas, Menlo, monospace" font-size="17">
+      <tspan fill="#7ee787">GET</tspan>
+      <tspan fill="#e6e6e6"> /api/movies?genre=drama</tspan>
+      <tspan fill="#8b8b9a">  →  </tspan>
+      <tspan fill="#f5b82e">200 OK</tspan>
+    </text>
+    <rect x="530" y="12" width="10" height="18" fill="#f5b82e">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Tecnologías -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle">
+    <g transform="translate(474 308)">
+      <rect width="92" height="30" rx="15" fill="#3c873a"/><text x="46" y="20" fill="#fff">Node.js</text>
+    </g>
+    <g transform="translate(574 308)">
+      <rect width="92" height="30" rx="15" fill="#444"/><text x="46" y="20" fill="#fff">Express</text>
+    </g>
+    <g transform="translate(674 308)">
+      <rect width="110" height="30" rx="15" fill="#3178c6"/><text x="55" y="20" fill="#fff">TypeScript</text>
+    </g>
+    <g transform="translate(792 308)">
+      <rect width="112" height="30" rx="15" fill="#336791"/><text x="56" y="20" fill="#fff">PostgreSQL</text>
+    </g>
+    <g transform="translate(912 308)">
+      <rect width="80" height="30" rx="15" fill="#5a67d8"/><text x="40" y="20" fill="#fff">Prisma</text>
+    </g>
+    <g transform="translate(1000 308)">
+      <rect width="60" height="30" rx="15" fill="#d63aff"/><text x="30" y="20" fill="#fff">JWT</text>
+    </g>
+  </g>
+</svg>
